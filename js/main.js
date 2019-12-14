@@ -12505,6 +12505,7 @@ $__System.register('e', ['9', 'c', 'a'], function (_export) {
 					case null:
 						// Default to v1 if null
 						$('body').addClass('slider-1');
+						history.replaceState(null, null, window.location.href + '?v=1');
 						break;
 				}
 				if ($slider.length) {
@@ -12567,7 +12568,7 @@ $__System.register('e', ['9', 'c', 'a'], function (_export) {
 			});
 			// =======================================================================================
 			// CHECK END
-			lg('carousel {blue{loaded}}');
+			//lg(`carousel {blue{loaded}}`);
 		}
 	};
 });
