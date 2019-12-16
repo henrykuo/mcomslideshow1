@@ -12435,7 +12435,7 @@ $__System.register('e', ['9', 'c', 'a'], function (_export) {
 	// DOM
 	'use strict';
 
-	var $, slick, lg, $slider, $playPause, urlParams, variant, firstDotX, playing;
+	var $, slick, lg, $slider, $playPause, urlParams, variant, slide_start, firstDotX, playing;
 
 	// =======================================================================================
 	// FUNCTIONS
@@ -12479,11 +12479,21 @@ $__System.register('e', ['9', 'c', 'a'], function (_export) {
 			// VARS
 			urlParams = undefined;
 			variant = undefined;
+			slide_start = undefined;
 			firstDotX = undefined;
 			playing = 1;
 			$(window).on('load', function () {
 				urlParams = new URLSearchParams(window.location.search);
 				variant = urlParams.get('v');
+				slide_start = urlParams.get('s');
+
+				if (variant === null) {
+					variant = '1';
+				}
+				if (slide_start === null) {
+					slide_start = '1';
+				}
+				history.replaceState(null, null, window.location.href.split('?')[0] + '?v=' + variant + '&s=' + slide_start);
 
 				switch (variant) {
 					case '1':
@@ -12502,12 +12512,31 @@ $__System.register('e', ['9', 'c', 'a'], function (_export) {
 						// Production
 						$('body').addClass('slider-4');
 						break;
-					case null:
-						// Default to v1 if null
-						$('body').addClass('slider-1');
-						history.replaceState(null, null, window.location.href + '?v=1');
+				}
+
+				var slide_images = ['<div class="slide"><img src="img/C9110013_102_01_slice_1387815.jpg"></div>', '<div class="slide"><img src="img/121219_PROMO_TIME_2_SHOP_HOMEPAGE_04_1386478.jpg"></div>', '<div class="slide"><img src="img/121219_PROMO_TIME_2_SHOP_HOMEPAGE_02_1386862.jpg"></div>', '<div class="slide"><img src="img/120519_DEC1_SH_TOYS_BANNER_1387922.jpg"></div>', '<div class="slide"><img src="img/121219_PROMO_TIME_2_SHOP_HOMEPAGE_03_1386477.jpg"></div>', '<div class="slide"><img src="img/121219_PROMO_TIME_2_SHOP_HOMEPAGE_05_1386479.jpg"></div>'];
+
+				switch (slide_start) {
+					case '1':
+						$slider.append(slide_images[0] + slide_images[1] + slide_images[2] + slide_images[3] + slide_images[4] + slide_images[5]);
+						break;
+					case '2':
+						$slider.append(slide_images[1] + slide_images[2] + slide_images[3] + slide_images[4] + slide_images[5] + slide_images[0]);
+						break;
+					case '3':
+						$slider.append(slide_images[2] + slide_images[3] + slide_images[4] + slide_images[5] + slide_images[0] + slide_images[1]);
+						break;
+					case '4':
+						$slider.append(slide_images[3] + slide_images[4] + slide_images[5] + slide_images[0] + slide_images[1] + slide_images[2]);
+						break;
+					case '5':
+						$slider.append(slide_images[4] + slide_images[5] + slide_images[0] + slide_images[1] + slide_images[2] + slide_images[3]);
+						break;
+					case '6':
+						$slider.append(slide_images[5] + slide_images[0] + slide_images[1] + slide_images[2] + slide_images[3] + slide_images[4]);
 						break;
 				}
+
 				if ($slider.length) {
 					$slider.map(function (v, k) {
 						var dots = $(this).attr('data-slider-bullets') === 'no' ? false : true,
