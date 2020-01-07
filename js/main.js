@@ -12447,6 +12447,14 @@ $__System.register('e', ['9', 'c', 'a'], function (_export) {
 			playSlideshow();
 		}
 	}
+	// ----------------- PLAY PAUSE RESUME -----------------
+	function playPauseResume() {
+		if (playing === 1) {
+			playSlideshow();
+		} else {
+			pauseSlideshow();
+		}
+	}
 	// ----------------- PLAY SLIDESHOW -----------------
 	function playSlideshow() {
 		playing = 1;
@@ -12587,6 +12595,9 @@ $__System.register('e', ['9', 'c', 'a'], function (_export) {
 				});
 				$slider.on('swipe', function () {
 					pauseSlideshow();
+				});
+				$slider.on('mouseout', function () {
+					playPauseResume();
 				});
 				$slickNext.on('click', function () {
 					pauseSlideshow();
