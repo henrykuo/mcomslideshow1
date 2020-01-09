@@ -12522,7 +12522,7 @@ $__System.register('e', ['9', 'c', 'a'], function (_export) {
 						break;
 				}
 
-				var slide_images = ['<div class="slide"><img src="img/C9110013_102_01_slice_1387815.jpg"></div>', '<div class="slide"><img src="img/121219_PROMO_TIME_2_SHOP_HOMEPAGE_04_1386478.jpg"></div>', '<div class="slide"><img src="img/121219_PROMO_TIME_2_SHOP_HOMEPAGE_02_1386862.jpg"></div>', '<div class="slide"><img src="img/120519_DEC1_SH_TOYS_BANNER_1387922.jpg"></div>', '<div class="slide"><img src="img/121219_PROMO_TIME_2_SHOP_HOMEPAGE_03_1386477.jpg"></div>', '<div class="slide"><img src="img/121219_PROMO_TIME_2_SHOP_HOMEPAGE_05_1386479.jpg"></div>'];
+				var slide_images = ['<div class="slide"><img src="img/010920_PROMO_THIS_IS_BIG_HOMEPAGE_102_BANNER_01_1389260.jpg"></div>', '<div class="slide"><img src="img/121219_PROMO_TIME_2_SHOP_HOMEPAGE_04_1386478.jpg"></div>', '<div class="slide"><img src="img/121219_PROMO_TIME_2_SHOP_HOMEPAGE_02_1386862.jpg"></div>', '<div class="slide"><img src="img/120519_DEC1_SH_TOYS_BANNER_1387922.jpg"></div>', '<div class="slide"><img src="img/121219_PROMO_TIME_2_SHOP_HOMEPAGE_03_1386477.jpg"></div>', '<div class="slide"><img src="img/121219_PROMO_TIME_2_SHOP_HOMEPAGE_05_1386479.jpg"></div>'];
 
 				switch (slide_start) {
 					case '1':
